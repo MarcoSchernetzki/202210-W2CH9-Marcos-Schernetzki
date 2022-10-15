@@ -1,4 +1,4 @@
-export let arrays = [
+let arrays = [
     [1, 0, 1],
     [0, 1, 0],
     [0, 0, 0],
@@ -40,8 +40,9 @@ export const countNeighbor = (array, row, colum) => {
     if (array[myRow][myColum] === 1) {
         count--;
     }
-    console.log(count);
+
     liveOrDied(count);
+    count = 0;
 };
 
 export const liveOrDied = (count) => {
@@ -86,10 +87,11 @@ export const liveOrDied = (count) => {
 
 export const playGame = (array) => {
     gameOfLife(array);
+    console.table(array);
     arrays = newArrays;
     newArrays = [[], [], []];
-
-    playGame(array);
 };
 
-playGame(arrays);
+setInterval(() => {
+    playGame(arrays);
+}, 1000);
