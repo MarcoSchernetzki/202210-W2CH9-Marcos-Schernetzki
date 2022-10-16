@@ -19,7 +19,7 @@ export const countNeighbor = (array, row, colum) => {
     const myRow = row;
     const myColum = colum;
 
-    for (let i = row - 1; i < row + 2 && i < 3; i++) {
+    for (let i = row - 1; i < row + 2 && i < array.length; i++) {
         for (let j = colum - 1; j < colum + 2; j++) {
             if (!array[i]) {
                 i++;
