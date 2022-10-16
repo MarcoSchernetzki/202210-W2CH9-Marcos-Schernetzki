@@ -86,6 +86,6 @@ export const playGame = (array) => {
     newArrays = [[], [], []];
 };
 
-// setInterval(() => {
-//     playGame(arrays);
-// }, 1000);
+setInterval(() => {
+    playGame(arrays);
+}, 1000);
