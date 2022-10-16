@@ -1,4 +1,4 @@
-let arrays = [
+export let arrays = [
     [1, 0, 1],
     [0, 1, 0],
     [0, 0, 0],
@@ -16,24 +16,20 @@ export const gameOfLife = (array) => {
 
 export const countNeighbor = (array, row, colum) => {
     let count = 0;
-    let myCount = count;
     const myRow = row;
     const myColum = colum;
 
     for (let i = row - 1; i < row + 2 && i < 3; i++) {
         for (let j = colum - 1; j < colum + 2; j++) {
-            if (array[i] === undefined) {
+            if (!array[i]) {
                 i++;
             }
-            if (array[j] === undefined) {
+            if (!array[j]) {
                 j++;
             }
 
             if (array[i][j] === 1) {
                 count++;
-            }
-            if (array[i][j] === 0) {
-                count + 0;
             }
         }
     }
@@ -42,7 +38,6 @@ export const countNeighbor = (array, row, colum) => {
     }
 
     liveOrDied(count);
-    count = 0;
 };
 
 export const liveOrDied = (count) => {
@@ -81,7 +76,6 @@ export const liveOrDied = (count) => {
         if (myCount > 1 && myCount < 4) {
             newArrays[2].push(1);
         }
-        return;
     }
 };
 
